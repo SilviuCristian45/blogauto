@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  blognodejs:
+    build:
+      context: ./backendnestjs
+      dockerfile: ./Dockerfile
+    container_name: nest-docker-postgres
+    environment:
+      - PORT=${PORT}
+      - DATABASE_HOST=${DATABASE_HOST}
+      - DATABASE_PORT=${DATABASE_PORT}
+      - DATABASE_USERNAME=${DATABASE_USERNAME}
+      - DATABASE_PASSWORD=${DATABASE_PASSWORD}
+      - DATABASE_NAME=${DATABASE_NAME}
+    ports:
+      - '${PORT}:3000'
+    depends_on:
+      - blogdb
+    volumes:
+      - ./app:/src
+
+  blogdb:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+    ports:
+      - '${DATABASE_PORT}:3306'
+    expose:
+      - '3306'
+    volumes:
+      - my-db:/var/lib/mysql
+
+volumes:
+  my-db:

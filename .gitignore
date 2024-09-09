@@ -1,0 +1,54 @@
+# compiled output
+/backendnestjs/dist
+/backendnestjs/node_modules
+/backendnestjs/build
+
+.env
+# Logs
+/backendnestjs/logs
+/backendnestjs/*.log
+/backendnestjs/npm-debug.log*
+/backendnestjs/pnpm-debug.log*
+/backendnestjs/yarn-debug.log*
+/backendnestjs/yarn-error.log*
+/backendnestjs/lerna-debug.log*
+
+# OS
+/backendnestjs/.DS_Store
+
+# Tests
+/backendnestjs/coverage
+/backendnestjs/.nyc_output
+
+# IDEs and editors
+/backendnestjs/.idea
+/backendnestjs/.project
+/backendnestjs/.classpath
+/backendnestjs/c9/
+.backendnestjs/*.launch
+/backendnestjs/.settings/
+.backendnestjs/*.sublime-workspace
+
+# IDE - VSCode
+/backendnestjs/.vscode/*
+/backendnestjs/.vscode/settings.json
+/backendnestjs/.vscode/tasks.json
+/backendnestjs/.vscode/launch.json
+/backendnestjs/.vscode/extensions.json
+
+# dotenv environment variable files
+/backendnestjs/.env
+/backendnestjs/.env.development.local
+/backendnestjs/.env.test.local
+/backendnestjs/.env.production.local
+/backendnestjs/.env.local
+
+# temp directory
+/backendnestjs/.temp
+/backendnestjs/.tmp
+
+# Runtime data
+/backendnestjs/pids
+/backendnestjs/*.pid
+/backendnestjs/*.seed
+/backendnestjs/*.pid.lock
