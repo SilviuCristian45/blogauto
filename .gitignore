@@ -52,3 +52,6 @@
 /backendnestjs/*.pid
 /backendnestjs/*.seed
 /backendnestjs/*.pid.lock
+nginx/certs/nginx-selfsigned.crt
+nginx/certs/nginx-selfsigned.key
+.idea/
