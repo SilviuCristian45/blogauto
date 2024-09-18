@@ -1,0 +1,24 @@
+version: '3.3'
+services:
+  blogdb:
+      container_name: "mysql_blog_database"
+      image: mysql:5.7
+      restart: always
+      environment:
+        MYSQL_DATABASE: ${DATABASE_NAME}
+        MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+      ports:
+        - '${DATABASE_PORT}:3306'
+      expose:
+        - '3306'
+      volumes:
+        - my-db:/var/lib/mysql
+        - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      networks:
+        - blogautonetwork
+
+volumes:
+  my-db:
+networks:
+  blogautonetwork:
+    external: true

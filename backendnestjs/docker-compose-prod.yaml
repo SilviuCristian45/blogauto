@@ -2,8 +2,8 @@ version: '3.3'
 services:
   blognodejs:
     build:
-      context: ./backendnestjs
-      dockerfile: ./Dockerfile
+      context: .
+      dockerfile: ./Dockerfileprod
     container_name: nest-docker-postgres
     environment:
       - PORT=${PORT}
@@ -21,23 +21,7 @@ services:
     networks:
       - blogautonetwork
 
-  blogdb:
-    image: mysql:5.7
-    restart: always
-    environment:
-      MYSQL_DATABASE: ${DATABASE_NAME}
-      MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
-    ports:
-      - '${DATABASE_PORT}:3306'
-    expose:
-      - '3306'
-    volumes:
-      - my-db:/var/lib/mysql
-    networks:
-      - blogautonetwork
 
-volumes:
-  my-db:
 networks:
   blogautonetwork:
     external: true
