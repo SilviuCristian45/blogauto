@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  nats:
+    image: nats:latest
+    container_name: nats
+    ports:
+      - "4222:4222"  # NATS client port
+      - "8222:8222"  # NATS monitoring port (optional)
+      - "6222:6222"  # NATS clustering port (optional)
+    environment:
+      - NATS_SERVER_NAME=nats
+      - NATS_USER=${NATS_USER}   # Optional: Set username
+      - NATS_PASS=${NATS_PASS}  # Optional: Set password
+    networks:
+      - blogautonetwork
+
+networks:
+  blogautonetwork:
+    external: true

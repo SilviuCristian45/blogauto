@@ -55,3 +55,4 @@
 nginx/certs/nginx-selfsigned.crt
 nginx/certs/nginx-selfsigned.key
 .idea/
+node_modules/
